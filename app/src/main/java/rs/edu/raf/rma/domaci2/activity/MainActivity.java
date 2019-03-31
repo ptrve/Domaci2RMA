@@ -95,9 +95,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String s = addTxt.getText().toString();
-                mContacts.add(new Contact(Util.generateId(), s));
-                mViewModel.setContacts(mContacts);
-                addTxt.setText("");
+                if (!s.isEmpty()) {
+                    mContacts.add(new Contact(Util.generateId(), s));
+                    mViewModel.setContacts(mContacts);
+                    addTxt.setText("");
+                }
             }
         });
 

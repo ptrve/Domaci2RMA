@@ -17,7 +17,7 @@ public class MainViewModel extends ViewModel {
         contactsLiveData = new MutableLiveData<>();
         List<Contact> contacts = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            contacts.add(new Contact(Util.generateId(), "Kontakt " + i));
+            contacts.add(new Contact(Util.generateId(), Character.toString((char)((int)'A' + i%26)) + " kontakt " + i));
         }
         contactsLiveData.setValue(contacts);
     }
